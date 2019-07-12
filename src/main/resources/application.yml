@@ -40,7 +40,15 @@ logging:
       example:
         dao: debug
 
-
+#redis配置
+jedis :
+  pool :
+    host : 127.0.0.1
+    port : 6379
+    config :
+      maxTotal: 100
+      maxIdle: 10
+      maxWaitMillis : 100000
 
 ###静态资源html.js 等等缓存（开发时设置为false） --必须配置
 #  spring.thymeleaf.cache=false
