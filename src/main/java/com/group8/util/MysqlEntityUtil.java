@@ -22,10 +22,10 @@ public class MysqlEntityUtil {
     private static final String SQL = "SELECT * FROM ";// 数据库操作
 
     // TODO 需要修改的地方				jdbc:mysql://192.9.8.144:3306/wym_guotu_xc
-    private static final String URL = "jdbc:mysql://localhost:3306/worldloan";
+    private static final String URL = "jdbc:mysql://localhost:3306/worldloan?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String NAME = "root";
     private static final String PASS = "root";
-    private static final String DRIVER = "com.mysql.jdbc.Driver";
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String packageOutPath = "com.vo";// 指定实体生成所在包的路径
     private String authorName = "Mr Chen";// 作者名字
     private String[] generateTables = null;//指定需要生成的表的表名，全部生成设置为null
@@ -202,7 +202,7 @@ public class MysqlEntityUtil {
         } else if (sqlType.equalsIgnoreCase("datetime")||sqlType.equalsIgnoreCase("date")
                 ||sqlType.equalsIgnoreCase("timestamp")||sqlType.equalsIgnoreCase("time")) {
             return "java.util.Date";
-        } else if (sqlType.equalsIgnoreCase("multipoint")) {
+        } else if (sqlType.equalsIgnoreCase("image")) {
             return "Blod";
         }
         return null;

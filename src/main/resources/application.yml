@@ -9,7 +9,7 @@ spring:
     username: root
     password: root
   resources:
-    static-locations: classpath:/templates,/classpath:/static/
+    static-locations: classpath:/templates/,classpath:/static/
 
   #关闭模板的缓存
   thymeleaf:
