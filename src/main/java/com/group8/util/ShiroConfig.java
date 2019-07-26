@@ -70,11 +70,11 @@ public class ShiroConfig {
         bean.setSecurityManager(manager);
         //设置登录页面
         //可以写路由也可以写jsp页面的访问路径
-        bean.setLoginUrl("/login");
+        bean.setLoginUrl("/login.html");
         //设置登录成功跳转的页面
-        bean.setSuccessUrl("/pages/index.jsp");
+        bean.setSuccessUrl("/index.html");
         //设置未授权跳转的页面
-        bean.setUnauthorizedUrl("/pages/unauthorized.jsp");
+        bean.setUnauthorizedUrl("/unauthorized.jsp");
         //定义过滤器
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/index", "anon");
@@ -84,7 +84,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/edit", "perms[delete]");
         filterChainDefinitionMap.put("/druid/**", "anon");
         //需要登录访问的资源 , 一般将/**放在最下边
-        filterChainDefinitionMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/login/**", "authc");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
     }
