@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.group8.afterendfinancial2.mapper")
 public class Financial2Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         SpringApplication.run(Financial2Application.class, args);
     }
 
