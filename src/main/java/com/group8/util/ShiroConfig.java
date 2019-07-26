@@ -77,14 +77,10 @@ public class ShiroConfig {
         bean.setUnauthorizedUrl("/unauthorized.jsp");
         //定义过滤器
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-        filterChainDefinitionMap.put("/index", "anon");
-        filterChainDefinitionMap.put("/login", "anon");
-        filterChainDefinitionMap.put("/loginUser", "anon");
-        filterChainDefinitionMap.put("/admin", "roles[admin]");
-        filterChainDefinitionMap.put("/edit", "perms[delete]");
-        filterChainDefinitionMap.put("/druid/**", "anon");
-        //需要登录访问的资源 , 一般将/**放在最下边
         filterChainDefinitionMap.put("/login/**", "authc");
+        filterChainDefinitionMap.put("/afterendfinancial2/**", "authc");
+        //需要登录访问的资源 , 一般将/**放在最下边
+        filterChainDefinitionMap.put("/**", "anon");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
     }
