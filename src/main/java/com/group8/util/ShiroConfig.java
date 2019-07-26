@@ -77,7 +77,7 @@ public class ShiroConfig {
         bean.setUnauthorizedUrl("/pages/unauthorized.jsp");
         //定义过滤器
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-        filterChainDefinitionMap.put("/index", "authc");
+        filterChainDefinitionMap.put("/index", "anon");
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/loginUser", "anon");
         filterChainDefinitionMap.put("/admin", "roles[admin]");
